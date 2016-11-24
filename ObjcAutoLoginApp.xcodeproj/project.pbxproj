@@ -1,0 +1,316 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DC9ED471DE6D811005CACC6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9ED461DE6D811005CACC6 /* main.m */; };
+		9DC9ED4A1DE6D811005CACC6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9ED491DE6D811005CACC6 /* AppDelegate.m */; };
+		9DC9ED4D1DE6D811005CACC6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DC9ED4C1DE6D811005CACC6 /* ViewController.m */; };
+		9DC9ED501DE6D811005CACC6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC9ED4E1DE6D811005CACC6 /* Main.storyboard */; };
+		9DC9ED521DE6D811005CACC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DC9ED511DE6D811005CACC6 /* Assets.xcassets */; };
+		9DC9ED551DE6D811005CACC6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DC9ED531DE6D811005CACC6 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9DC9ED421DE6D811005CACC6 /* ObjcAutoLoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ObjcAutoLoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DC9ED461DE6D811005CACC6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9DC9ED481DE6D811005CACC6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9DC9ED491DE6D811005CACC6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9DC9ED4B1DE6D811005CACC6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9DC9ED4C1DE6D811005CACC6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9DC9ED4F1DE6D811005CACC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9DC9ED511DE6D811005CACC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9DC9ED541DE6D811005CACC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9DC9ED561DE6D811005CACC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DC9ED3F1DE6D811005CACC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9DC9ED391DE6D811005CACC6 = {
+			isa = PBXGroup;
+			children = (
+				9DC9ED441DE6D811005CACC6 /* ObjcAutoLoginApp */,
+				9DC9ED431DE6D811005CACC6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DC9ED431DE6D811005CACC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DC9ED421DE6D811005CACC6 /* ObjcAutoLoginApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DC9ED441DE6D811005CACC6 /* ObjcAutoLoginApp */ = {
+			isa = PBXGroup;
+			children = (
+				9DC9ED481DE6D811005CACC6 /* AppDelegate.h */,
+				9DC9ED491DE6D811005CACC6 /* AppDelegate.m */,
+				9DC9ED4B1DE6D811005CACC6 /* ViewController.h */,
+				9DC9ED4C1DE6D811005CACC6 /* ViewController.m */,
+				9DC9ED4E1DE6D811005CACC6 /* Main.storyboard */,
+				9DC9ED511DE6D811005CACC6 /* Assets.xcassets */,
+				9DC9ED531DE6D811005CACC6 /* LaunchScreen.storyboard */,
+				9DC9ED561DE6D811005CACC6 /* Info.plist */,
+				9DC9ED451DE6D811005CACC6 /* Supporting Files */,
+			);
+			path = ObjcAutoLoginApp;
+			sourceTree = "<group>";
+		};
+		9DC9ED451DE6D811005CACC6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9DC9ED461DE6D811005CACC6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DC9ED411DE6D811005CACC6 /* ObjcAutoLoginApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DC9ED591DE6D811005CACC6 /* Build configuration list for PBXNativeTarget "ObjcAutoLoginApp" */;
+			buildPhases = (
+				9DC9ED3E1DE6D811005CACC6 /* Sources */,
+				9DC9ED3F1DE6D811005CACC6 /* Frameworks */,
+				9DC9ED401DE6D811005CACC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ObjcAutoLoginApp;
+			productName = ObjcAutoLoginApp;
+			productReference = 9DC9ED421DE6D811005CACC6 /* ObjcAutoLoginApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DC9ED3A1DE6D811005CACC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Nifty;
+				TargetAttributes = {
+					9DC9ED411DE6D811005CACC6 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9DC9ED3D1DE6D811005CACC6 /* Build configuration list for PBXProject "ObjcAutoLoginApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9DC9ED391DE6D811005CACC6;
+			productRefGroup = 9DC9ED431DE6D811005CACC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DC9ED411DE6D811005CACC6 /* ObjcAutoLoginApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DC9ED401DE6D811005CACC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DC9ED551DE6D811005CACC6 /* LaunchScreen.storyboard in Resources */,
+				9DC9ED521DE6D811005CACC6 /* Assets.xcassets in Resources */,
+				9DC9ED501DE6D811005CACC6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DC9ED3E1DE6D811005CACC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DC9ED4D1DE6D811005CACC6 /* ViewController.m in Sources */,
+				9DC9ED4A1DE6D811005CACC6 /* AppDelegate.m in Sources */,
+				9DC9ED471DE6D811005CACC6 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9DC9ED4E1DE6D811005CACC6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DC9ED4F1DE6D811005CACC6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9DC9ED531DE6D811005CACC6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DC9ED541DE6D811005CACC6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9DC9ED571DE6D811005CACC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9DC9ED581DE6D811005CACC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DC9ED5A1DE6D811005CACC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ObjcAutoLoginApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nifty.ObjcAutoLoginApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9DC9ED5B1DE6D811005CACC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ObjcAutoLoginApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Nifty.ObjcAutoLoginApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DC9ED3D1DE6D811005CACC6 /* Build configuration list for PBXProject "ObjcAutoLoginApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DC9ED571DE6D811005CACC6 /* Debug */,
+				9DC9ED581DE6D811005CACC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DC9ED591DE6D811005CACC6 /* Build configuration list for PBXNativeTarget "ObjcAutoLoginApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DC9ED5A1DE6D811005CACC6 /* Debug */,
+				9DC9ED5B1DE6D811005CACC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DC9ED3A1DE6D811005CACC6 /* Project object */;
+}
