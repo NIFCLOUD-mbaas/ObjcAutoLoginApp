@@ -2,7 +2,7 @@
 //  ViewController.h
 //  ObjcAutoLoginApp
 //
-//  Created by oono on 2016/11/24.
+//  Created by Nifty on 2016/11/24.
 //  Copyright © 2016年 Nifty. All rights reserved.
 //
 

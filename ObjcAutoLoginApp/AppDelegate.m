@@ -2,11 +2,12 @@
 //  AppDelegate.m
 //  ObjcAutoLoginApp
 //
-//  Created by oono on 2016/11/24.
+//  Created by Nifty on 2016/11/24.
 //  Copyright © 2016年 Nifty. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import <NCMB/NCMB.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    // SDKの初期化
+    [NCMB setApplicationKey:@"YOUR_APPLICATION_KEY"
+                  clientKey:@"YOUR_CLIENT_KEY"];
+    
     return YES;
 }
 
