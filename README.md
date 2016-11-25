@@ -1,4 +1,4 @@
-# 【iOS Swift】自動ログイン機能を実装しよう！
+# 【iOS Objective-C】自動ログイン機能を実装しよう！
 ![画像1](/readme-img/001.png)
 
 ## 概要
@@ -14,10 +14,10 @@
 ![画像2](/readme-img/002.png)
 
 ## 動作環境
-* Mac OS X 10.12(Sierra)
-* Xcode ver. 8.0
-* Simulator ver. 10.0
- * iPhone7
+* Mac OS X 10.11.6(El Capitan)
+* Xcode ver. 8.1
+* iPhone5 iOS 9.3.5
+* iPhone6s iOS 10.0.1
 
 ※上記内容で動作確認をしています。
 
@@ -34,21 +34,21 @@
 
 ### 2. GitHubからサンプルプロジェクトのダウンロード
 * 下記リンクをクリックしてプロジェクトをMacにダウンロードします
- * __[SwiftAutoLoginApp](https://github.com/natsumo/SwiftAutoLoginApp/archive/master.zip)__
+ * __[ObjcAutoLoginApp](https://github.com/NIFTYCloud-mbaas/ObjcAutoLoginApp/archive/master.zip)__
 
 ### 3. Xcodeでアプリを起動
-* ダウンロードしたフォルダを開き、「`SwiftAutoLoginApp.xcodeproj`」をダブルクリックしてXcode開きます
+* ダウンロードしたフォルダを開き、「`ObjcAutoLoginApp.xcodeproj`」をダブルクリックしてXcode開きます
 
 ![画像9](/readme-img/009.png)
 
 ![画像6](/readme-img/006.png)
 
-* 「SwiftAutoLoginApp.xcodeproj」（青い方）ではないので注意してください！
+* 「ObjcAutoLoginApp.xcodeproj」（青い方）ではないので注意してください！
 
 ![画像8](/readme-img/008.png)
 
 ### 4. APIキーの設定
-* `AppDelegate.swift`を編集します
+* `AppDelegate.m`を編集します
 * 先程[ニフティクラウドmobile backend](http://mb.cloud.nifty.com/)のダッシュボード上で確認したAPIキーを貼り付けます
 
 ![画像7](/readme-img/007.png)
@@ -106,119 +106,98 @@
 ここではサンプルアプリに実装済みの内容について紹介します
 
 ### SDKのインポートと初期設定
-* ニフティクラウドmobile backend のドキュメント（クイックスタート）をSwift版に書き換えたドキュメントをご用意していますので、ご活用ください
- * [SwiftでmBaaSを始めよう！(＜CocoaPods＞でuse_framewoks!を有効にした方法)](http://qiita.com/natsumo/items/57d3a4d9be16b0490965)
+* ニフティクラウドmobile backend の[ドキュメント（クイックスタート）](http://mb.cloud.nifty.com/doc/current/introduction/quickstart_ios.html)をご活用ください
 
 ### ロジック
-* `Main.storyboard`でデザインを作成し、`ViewController.swift`にロジックを書いています
+* `Main.storyboard`でデザインを作成し、`ViewController.m`にロジックを書いています
 
 #### 自動ログイン処理
-```swift
-//
-//  ViewController.swift
-//  SwiftAutoLoginApp
-//
-//  Created by Natsumo Ikeda on 2016/10/26.
-//  Copyright © 2016年 NIFTY Corporation. All rights reserved.
-//
-import UIKit
-import NCMB
+```objc
+#import "ViewController.h"
+#import <NCMB/NCMB.h>
 
-class ViewController: UIViewController {
-    // label
-    @IBOutlet weak var greetingMessage: UILabel!
-    @IBOutlet weak var lastVisit: UILabel!
-    @IBOutlet weak var dayAndTime: UILabel!
+@interface ViewController ()
+// label
+@property (weak, nonatomic) IBOutlet UILabel *greetingMessage;
+@property (weak, nonatomic) IBOutlet UILabel *lastVisit;
+@property (weak, nonatomic) IBOutlet UILabel *dayAndTime;
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // labelの初期化
-        greetingMessage.text = ""
-        lastVisit.text = ""
-        dayAndTime.text = ""
+@end
 
-        // UUID取得
-        let uuid = UIDevice.current.identifierForVendor?.uuidString
-        print("uuid:\(uuid)")
+@implementation ViewController
 
-        /* mBaaSログイン */
-        NCMBUser.logInWithUsername(inBackground: uuid, password: uuid) { (user, login_error) in
-            if login_error != nil {
-                // ログイン失敗時の処理
-                let login_err : NSError = login_error as! NSError
-                print("ログインに失敗しました。エラーコード：\(login_err.code)")
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // labelの初期化
+    self.greetingMessage.text = @"";
+    self.lastVisit.text = @"";
+    self.dayAndTime.text = @"";
 
-                // 初回利用（会員未登録）の場合
-                if login_err.code == 401002 { // 401002：ID/Pass認証エラー
-                    /* mBaaS会員登録 */
-                    let new_user = NCMBUser()
-                    new_user.userName = uuid
-                    new_user.password = uuid
-                    new_user.signUpInBackground({ (signUp_error) in
-                        if signUp_error != nil {
-                            // 会員登録失敗時の処理
-                            let signUp_err = signUp_error as! NSError
-                            print("会員登録に失敗しました。エラーコード：\(signUp_err.code)")
-                        } else {
-                            // 会員登録成功時の処理
-                            print("会員登録に成功しました。")
+    // UUID取得
+    NSString *uuid = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    NSLog(@"uuid:%@",uuid);
 
-                            self.greetingMessage.text = "はじめまして！"
+    [NCMBUser logInWithUsernameInBackground:uuid password:uuid block:^(NCMBUser *user, NSError *error) {
+        if (error) {
+            // ログイン失敗時の処理
+            NSLog(@"ログインに失敗しました。エラーコード：%ld",(long)error.code);
+            // 初回利用（会員未登録）の場合
+            if (error.code == 401002) { // 401002：ID/Pass認証エラー
+                /* mBaaS会員登録 */
+                NCMBUser *user = [NCMBUser user];
+                user.userName = uuid;
+                user.password = uuid;
 
-                            /* mBaaSデータの保存 */
-                            let lastLoginDate = new_user.updateDate
-                            new_user.setObject(lastLoginDate, forKey: "lastLoginDate")
-                            new_user.saveInBackground({ (save_error) in
-                                if save_error != nil {
-                                    // 保存失敗時の処理
-                                    let save_err = save_error as! NSError
-                                    print("最終ログイン日時の保存に失敗しました。エラーコード：\(save_err.code)")
-
-                                } else {
-                                    // 保存成功時の処理
-                                    print("最終ログイン日時の保存に成功しました。")
-
-                                }
-                            })
-
-                        }
-                    })
-                }
-
-            } else {
-                // ログイン成功時の処理
-                print("ログインに成功しました")
-
-                self.greetingMessage.text = "おかえりなさい"
-                self.lastVisit.text = "最終ログイン"
-
-                // 最終ログイン日時取得
-
-                let lastLoginDate = user?.object(forKey: "lastLoginDate") as! Date
-                let formatter = DateFormatter()
-                formatter.dateFormat = "yyyy/MM/dd HH:mm:ss"
-                let dateStr = formatter.string(from: lastLoginDate)
-                self.dayAndTime.text = "\(dateStr)"
-
-                // ログイン日時の上書き
-                let updateDate = user?.updateDate
-                user?.setObject(updateDate, forKey: "lastLoginDate")
-                user?.saveInBackground({ (save_error) in
-                    if save_error != nil {
-                        // 保存失敗時の処理
-                        let save_err = save_error as! NSError
-                        print("最終ログイン日時の保存に失敗しました。エラーコード：\(save_err.code)")
-
+                [user signUpInBackgroundWithBlock:^(NSError *error) {
+                    if (error) {
+                        // 会員登録失敗時の処理
+                        NSLog(@"会員登録に失敗しました。エラーコード：%ld",(long)error.code);
                     } else {
-                        // 保存成功時の処理
-                        print("最終ログイン日時の保存に成功しました。")
+                        // 会員登録成功時の処理
+                        NSLog(@"会員登録に成功しました。");
+                        self.greetingMessage.text = @"はじめまして！";
+
+                        /* mBaaSデータの保存 */
+                        // 最終ログイン時間をセット
+                        [user setObject:user.updateDate forKey:@"lastLoginDate"];
+                        [user saveInBackgroundWithBlock:^(NSError *error) {
+                            if (error) {
+                                // 保存失敗時の処理
+                                NSLog(@"最終ログイン日時の保存に失敗しました。エラーコード：%ld",(long)error.code);
+                            } else {
+                                // 保存成功時の処理
+                                NSLog(@"最終ログイン日時の保存に成功しました。");
+                            }
+                        }];
                     }
-                })
+                }];
             }
+        } else {
+            // ログイン成功時の処理
+            NSLog(@"ログインに成功しました");
+
+            self.greetingMessage.text = @"おかえりなさい";
+            self.lastVisit.text = @"最終ログイン";
+            // 最終ログイン日時取得
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            formatter.dateFormat = @"yyyy/MM/dd HH:mm:ss"; // 日付のフォーマット
+            self.dayAndTime.text = [formatter stringFromDate:user.updateDate];
+
+            // ログイン日時の上書き
+            [user setObject:user.updateDate forKey:@"lastLoginDate"];
+            [user saveInBackgroundWithBlock:^(NSError *error) {
+                if (error) {
+                    // 保存失敗時の処理
+                    NSLog(@"最終ログイン日時の保存に失敗しました。エラーコード：%ld",(long)error.code);
+                } else {
+                    // 保存成功時の処理
+                    NSLog(@"最終ログイン日時の保存に成功しました。");
+                }
+            }];
         }
-    }
+    }];
 }
 ```
 
-* 同じ内容の【Objective-C】版もご用意しています
- * https://github.com/NIFTYCloud-mbaas/ObjcAutoLoginApp
+* 同じ内容の【Swift】版もご用意しています
+ * https://github.com/NIFTYCloud-mbaas/SwiftAutoLoginApp
