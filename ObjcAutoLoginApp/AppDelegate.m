@@ -19,9 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // SDKの初期化
-    [NCMB setApplicationKey:@"YOUR_APPLICATION_KEY"
-                  clientKey:@"YOUR_CLIENT_KEY"];
-    
+    [NCMB setApplicationKey:@"YOUR_NCMB_APPLICATION_KEY"
+                  clientKey:@"YOUR_NCMB_CLIENT_KEY"];
     return YES;
 }
 
