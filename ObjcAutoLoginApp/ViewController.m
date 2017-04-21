@@ -2,8 +2,8 @@
 //  ViewController.m
 //  ObjcAutoLoginApp
 //
-//  Created by Nifty on 2016/11/24.
-//  Copyright © 2016年 Nifty. All rights reserved.
+//  Created by FJCT on 2016/11/24.
+//  Copyright 2017 FUJITSU CLOUD TECHNOLOGIES LIMITED All Rights Reserved.
 //
 
 #import "ViewController.h"
