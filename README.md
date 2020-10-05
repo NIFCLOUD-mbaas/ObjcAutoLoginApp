@@ -71,7 +71,7 @@
 ##### アプリ側
 * 画面は次のようになります
 
-![画像10](/readme-img/010.png =320x)
+<img src="/readme-img/010.png" alt="画像10" width="320"/>
 
 ##### クラウド側
 * [ニフクラ mobile backend](https://mbaas.nifcloud.com/)のダッシュボードを確認してみましょう
@@ -92,7 +92,7 @@
 ##### アプリ側
 * 画面は次のようになります
 
-![画像12](/readme-img/012.png =320x)
+<img src="/readme-img/012.png" alt="画像12" width="320"/>
 
 * [ニフクラ mobile backend](https://mbaas.nifcloud.com/)の会員機能では会員毎に、会員登録やログインを行うたびに更新される「updateDate」というフィールドを持ち、この値を利用して、「最終ログイン」日時の表示をするようにしています
  * 「lastLoginDate」というフィールドに値を移して使用しています
