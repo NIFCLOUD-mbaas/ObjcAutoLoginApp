@@ -110,12 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9DC9ED591DE6D811005CACC6 /* Build configuration list for PBXNativeTarget "ObjcAutoLoginApp" */;
 			buildPhases = (
+				30C2F9E41204A814E95FCBF9 /* [CP] Check Pods Manifest.lock */,
 				724D0845694C45614F9FEF7F /* 📦 Check Pods Manifest.lock */,
 				9DC9ED3E1DE6D811005CACC6 /* Sources */,
 				9DC9ED3F1DE6D811005CACC6 /* Frameworks */,
 				9DC9ED401DE6D811005CACC6 /* Resources */,
-				8C2D7499CBEC6200454B81A6 /* 📦 Embed Pods Frameworks */,
-				88AF9588AAFEF6214F9416E6 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -133,7 +132,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = Nifty;
+				ORGANIZATIONNAME = "FUJITSU CLOUD TECHNOLOGIES LIMITED";
 				TargetAttributes = {
 					9DC9ED411DE6D811005CACC6 = {
 						CreatedOnToolsVersion = 8.1;
@@ -173,6 +172,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		30C2F9E41204A814E95FCBF9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ObjcAutoLoginApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		724D0845694C45614F9FEF7F /* 📦 Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -186,36 +207,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		88AF9588AAFEF6214F9416E6 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjcAutoLoginApp/Pods-ObjcAutoLoginApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8C2D7499CBEC6200454B81A6 /* 📦 Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ObjcAutoLoginApp/Pods-ObjcAutoLoginApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -351,7 +342,7 @@
 				INFOPLIST_FILE = ObjcAutoLoginApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.niftycloud.ObjcAutoLoginApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.nifcloud.ObjcAutoLoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -364,7 +355,7 @@
 				INFOPLIST_FILE = ObjcAutoLoginApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.niftycloud.ObjcAutoLoginApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobilebackend.nifcloud.ObjcAutoLoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
